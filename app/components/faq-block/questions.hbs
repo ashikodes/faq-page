@@ -1,0 +1,15 @@
+<div class="col-lg-5 d-flex flex-column justify-content-center faq-content px-4 px-lg-2 pb-4 pb-lg-0">
+  <h3 class="mb-3 fw-bold d-flex justify-content-center justify-content-lg-start">FAQ</h3>
+  <BsAccordion class="accordion accordion-flush pb-4" as |acc|>
+    {{#each this.questions as |question|}}
+      <acc.item @value={{question.key}} as |aitem|>
+        <aitem.title>
+          {{question.title}}
+        </aitem.title>
+        <aitem.body>
+          {{question.body}}
+        </aitem.body>
+      </acc.item>
+    {{/each}}
+  </BsAccordion>
+</div>

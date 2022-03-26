@@ -1,0 +1,111 @@
+@import './variables.scss';
+@import 'ember-bootstrap/bootstrap';
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+.content {
+  @include gradient-y($bg-violet, $bg-blue, 15%, 85%);
+}
+.work-pattern {
+  background-image: url('/assets/images/bg-pattern-mobile.svg');
+  background-repeat: no-repeat;
+  background-position: top;
+  height: 120px;
+  position: relative;
+
+  @include media-breakpoint-up(lg) {
+    background-image: url('/assets/images/bg-pattern-desktop.svg');
+    background-position: 110% 63%;
+    height: auto;
+    overflow: hidden;
+    position: unset;
+  }
+}
+.work-desktop {
+  background-image: url('/assets/images/work-desktop-2.png');
+  background-position: bottom;
+  background-size: 220px;
+  background-repeat: no-repeat;
+  width: 220px;
+  height: 170px;
+  position: absolute;
+  left: 57px;
+  bottom: 53px;
+
+  @include media-breakpoint-up(lg) {
+    background-position: center 42%;
+    background-size: contain;
+    margin-left: -5.5rem;
+    position: unset;
+    width: 415px;
+    height: 100%;
+  }
+}
+.work-desktop img.box {
+  width: 3rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+
+  @include media-breakpoint-up(lg) {
+    position: absolute;
+    width: 6.25rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.faq-block {
+  position: relative;
+  width: 21rem;
+
+  @include media-breakpoint-up(lg) {
+    width: 50rem;
+  }
+}
+.faq-content {
+  @include media-breakpoint-up(lg) {
+    height: 29rem;
+  }
+}
+.accordion-button,
+.accordion-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+.accordion-button {
+  color: #818086;
+  font-size: 0.875rem;
+}
+.accordion-button:hover {
+  color: hsl(14, 88%, 65%);
+}
+.accordion-button:not(.collapsed)::after,
+.accordion-button::after {
+  background-image: url(('/assets/images/icon-arrow-down.svg'));
+}
+.accordion-button::after {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-size: 0.75rem;
+}
+.accordion-body {
+  padding-top: 0;
+  color: #a4a3a9;
+  font-size: 0.75rem;
+}
+.accordion-button:not(.collapsed),
+.accordion-button:focus {
+  border: none;
+  box-shadow: none;
+}
+.accordion-button:not(.collapsed) {
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+}
+.accordion-flush .accordion-item:last-child {
+  border-bottom-color: rgba(0, 0, 0, 0.125);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
